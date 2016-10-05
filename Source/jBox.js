@@ -762,6 +762,12 @@ demos: http://stephanwagner.me/jBox/demos
 			
 			// Remove jBox from data
 			var overlay_data = this.overlay.data('jBox');
+
+			// Sometimes there are no DOM-object for overlay
+			if (!overlay_data) {
+				return;
+			}
+
 			delete overlay_data['jBox-' + this.id];
 			this.overlay.data('jBox', overlay_data);
 			
